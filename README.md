@@ -9,6 +9,7 @@ Autonomous Driving Repositories:
 Formula Student Traction Inverter Repositories:
 
 - Motor Encoder Interface: https://github.com/samlei-research/endat_ip_core
+- Emdedded Linux CAN to AXI Interface: https://github.com/samlei-research/zynq_sw-interface_starkstrom
 
 <!---
 samlei-research/samlei-research is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
