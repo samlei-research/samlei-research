@@ -1,10 +1,6 @@
 👋 Hi, I’m Sam
 
-Researching on advanced hardware-accelrated algorithms and AI Inference.
-
-Autonomous Driving Repositories:
-
-- Novatel GPS Receiver for ros2-humble: https://github.com/samlei-research/novatel_oem7_driver/tree/feature_ros2_humble_support
+Researching on advanced hardware-accelrated algorithms and AI Inference
 
 Formula Student Traction Inverter Repositories:
 
