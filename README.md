@@ -4,7 +4,7 @@ I am working on projects regarding hardware acceleration, hardware-optimized pro
 
 # Formula Student Traction Inverter
 
-## Hardware Interaces
+## Hardware Interfaces
 - [Motor Encoder Interface](https://github.com/samlei-research/endat_interface)
 - [External Differntial ADC Interface](https://github.com/samlei-research/inverter_adc_interface)
 
