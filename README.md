@@ -2,16 +2,16 @@
 
 Researching on advanced hardware-accelrated algorithms and AI Inference
 
-Formula Student Traction Inverter Repositories:
+# Formula Student Traction Inverter
 
-Interaces
-- Motor Encoder Interface: [https://github.com/samlei-research/endat_ip_core](https://github.com/samlei-research/endat_interface)
-- External DIfferntial ADC Interface: https://github.com/samlei-research/spi_ip_core
+## Hardware Interaces
+- [Motor Encoder Interface](https://github.com/samlei-research/endat_interface)
+- [External Differntial ADC Interface](https://github.com/samlei-research/spi_ip_core)
 
-Software modules:
-- Emdedded Linux CAN to AXI Interface: 
+## Software Interfaces:
+- Emdedded Linux CAN to AXI Interface:
 
-Inverter Operating System:
+## Inverter Operating System 
 - Forked Uboot config: https://github.com/samlei-research/xlnx_uboot_custom
 - Forked Xilinx Linux config: https://github.com/samlei-research/xilinx-linux_custom
 
