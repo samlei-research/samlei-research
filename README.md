@@ -6,7 +6,7 @@ I am working on projects regarding hardware acceleration, hardware-optimized pro
 
 ## Hardware Interaces
 - [Motor Encoder Interface](https://github.com/samlei-research/endat_interface)
-- [External Differntial ADC Interface](https://github.com/samlei-research/spi_ip_core)
+- [External Differntial ADC Interface](https://github.com/samlei-research/inverter_adc_interface)
 
 ## Software Interfaces:
 - Emdedded Linux CAN to AXI Interface:
