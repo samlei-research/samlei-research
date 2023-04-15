@@ -1,6 +1,6 @@
 👋 Hi, I’m Sam
 
-Researching on advanced hardware-accelrated algorithms and AI Inference
+I am working on projects regarding hardware acceleration, hardware-optimized programming and efficient software.
 
 # Formula Student Traction Inverter
 
