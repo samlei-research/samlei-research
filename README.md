@@ -5,7 +5,7 @@ Researching on advanced hardware-accelrated algorithms and AI Inference
 Formula Student Traction Inverter Repositories:
 
 Interaces
-- Motor Encoder Interface: https://github.com/samlei-research/endat_ip_core
+- Motor Encoder Interface: [https://github.com/samlei-research/endat_ip_core](https://github.com/samlei-research/endat_interface)
 - External DIfferntial ADC Interface: https://github.com/samlei-research/spi_ip_core
 
 Software modules:
