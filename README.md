@@ -9,11 +9,11 @@ I am working on projects regarding hardware acceleration, hardware-optimized pro
 - [External Differntial ADC Interface](https://github.com/samlei-research/inverter_adc_interface)
 
 ## Software Interfaces:
-- Emdedded Linux CAN to AXI Interface:
+- [Emdedded Linux CAN to AXI Interface](https://github.com/samlei-research/automatic_can_axi_mapper)
 
 ## Inverter Operating System 
-- Forked Uboot config: https://github.com/samlei-research/xlnx_uboot_custom
-- Forked Xilinx Linux config: https://github.com/samlei-research/xilinx-linux_custom
+- [Forked Uboot config](https://github.com/samlei-research/xlnx_uboot_custom)
+- [Forked Xilinx Linux config]((https://github.com/samlei-research/xilinx-linux_custom)
 
 <!---
 samlei-research/samlei-research is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
