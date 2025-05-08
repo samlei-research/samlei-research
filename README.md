@@ -10,7 +10,7 @@ of scene understanding and motion planning.
 - **Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology**. *IEEE Electrification Magazine, vol. 11, no. 2*, 2023. [Link](https://ieeexplore.ieee.org/abstract/document/10143767)
 
 # Projects
-## THAMP: THAccelerated Motion Planner (M. Sc.)
+## THAMP: THAccelerated Motion Planner
 
 ### Results
 
@@ -23,7 +23,7 @@ of scene understanding and motion planning.
 #### Avoidance
 
 
-## Formula Student Traction Inverter (B. Eng.)
+## Formula Student Traction Inverter
 
 ### Hardware Interfaces
 - [Motor Encoder Interface](https://github.com/samlei-research/endat_interface)
