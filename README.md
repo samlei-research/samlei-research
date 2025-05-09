@@ -16,19 +16,46 @@ This project developed as part of the [Driverless Mobility](https://github.com/D
 
 ### Results
 
+These results are part of HiL testing and real-world testing with a research vehicle. Four scenarios can be seen.
+
 #### Straight Driving
+
+| HiL | Real-world |
+|:-----------------------------------------:|:-----------------------------------------:|
+| <img src="imgs/thamp/shil.gif" height="200"/> | <img src="imgs/thamp/sreal.gif" height="200"/> |
 
 #### Parking Vehicle
 
+| HiL | Real-world |
+|:-----------------------------------------:|:-----------------------------------------:|
+| <img src="imgs/thamp/phil.gif" height="200"/> | <img src="imgs/thamp/phil.gif" height="200"/> |
+
 #### Overtaking
 
+| HiL | Real-world |
+|:-----------------------------------------:|:-----------------------------------------:|
+| <img src="imgs/thamp/sover.gif" height="200"/> | <img src="imgs/thamp/rover.gif" height="200"/> |
+
 #### Avoidance
+
+| HiL | Real-world |
+|:-----------------------------------------:|:-----------------------------------------:|
+| <img src="imgs/thamp/savoid.gif" height="200"/> | <img src="imgs/thamp/ravoid.gif" height="200"/> |
 
 ## Yolov4 Edge Object Detection: Jetson TX2 vs. Utlrascale MPSoC
 
 Metrics are: FPS, W. On Jetson TX2 `jtop` was used to measure power consumption, on Ultrascale MPSoC `sysmon`was used.
 
+| Detected cars on THA campus using FPGA|
+|:-----------------------------------------:|
+| <img src="imgs/yoloresult.png" height="200"/> |
+
 ### Evaluation Hardware
+
+| Jetson TX2 | UltraZed |
+|:-----------------------------------------:|:-----------------------------------------:|
+| <img src="imgs/jetsontx.jpg" height="200"/> | <img src="imgs/ultrazed.jpg" height="200"/> |
+
 
 ### Latency
 
