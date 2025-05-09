@@ -12,6 +12,8 @@ of scene understanding and motion planning.
 # Projects
 ## THAMP: THAccelerated Motion Planner
 
+This project developed as part of the [Driverless Mobility](https://github.com/DriverlessMobility) research group at Technical Univeristy of Applied Sciences Augsburg.
+
 ### Results
 
 #### Straight Driving
@@ -21,6 +23,28 @@ of scene understanding and motion planning.
 #### Overtaking
 
 #### Avoidance
+
+## Yolov4 Edge Object Detection: Jetson TX2 vs. Utlrascale MPSoC
+
+Metrics are: FPS, W. On Jetson TX2 `jtop` was used to measure power consumption, on Ultrascale MPSoC `sysmon`was used.
+
+### Evaluation Hardware
+
+### Latency
+
+| FPS    | Jetson TX2 | UltraZed
+| -------- | ------- | -------
+| Min  | 3.1 | 3.091
+| Max | 3.4 | 3.202
+| Avg    | 3.3 | 3.134
+
+### Inference
+
+| Power consumption [W]    | Jetson TX2 | UltraZed
+| -------- | ------- | -------
+| Inference Off  | 2.216 | 1.734
+| Inference On | 9.955 | 2.641 
+| Diff.    | 7.739 | 0.906 
 
 
 ## Formula Student Traction Inverter
