@@ -1,5 +1,7 @@
 # Samuel Leitenmaier
 Research Associate at [Technical University of Applied Sciences Augsburg](https://www.tha.de/)
+## Contact
+- Email: samuel.leitenmaier@tha.de
 
 # Biography
 
