@@ -1,13 +1,22 @@
-👋 Hi, I’m Sam
+# Samuel Leitenmaier
+Research Associate at [Technical University of Applied Sciences Augsburg](https://www.tha.de/)
 
-I am working on projects regarding hardware acceleration, hardware-optimized programming and efficient software.
-The main focus is autonomous systems and robotics, where I try to improve the efficiency both on computational and functional side
-of scene understanding and motion planning.
+# Biography
+
+Samuel Leitenmaier received his B. Eng. in Computer Engineering and M. Sc. in Applied Research on Computer Science from the  [Technical University of Applied Sciences Augsburg](https://www.tha.de/).
+He is currently a research associate at the [Driverless Mobility](https://github.com/DriverlessMobility) research group. His main focus lies on the strong interaction between motion planning and
+scene understanding of autonomous vehicles with a special focus on heterogeneous computing architectures utilizing these.
+
+# Research interests
+- Autonomous Driving
+- Motion Planning, Navigation, Scene Understanding
+- Heterogeneous Computing with FPGAs
+- Efficient Hardware / Software using SoC
 
 # Publications
 
-
-- **Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology**. *IEEE Electrification Magazine, vol. 11, no. 2*, 2023. [Link](https://ieeexplore.ieee.org/abstract/document/10143767)
+- **Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner**. *IEEE International Conference on Robotics and Automation,RoboARCH: Robotics Acceleration with Computing Hardware and Systems*, 2025. [Abstract](https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view)
+- **Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology**. *IEEE Electrification Magazine, vol. 11, no. 2*, 2023. [Article](https://ieeexplore.ieee.org/abstract/document/10143767)
 
 # Projects
 ## THAMP: THAccelerated Motion Planner
