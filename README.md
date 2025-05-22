@@ -17,7 +17,7 @@ scene understanding of autonomous vehicles with a special focus on heterogeneous
 
 # Publications
 
-- **Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner**. *IEEE International Conference on Robotics and Automation, RoboARCH: Robotics Acceleration with Computing Hardware and Systems*, 2025. [Abstract](https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view)
+- **Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner**. *IEEE International Conference on Robotics and Automation* , Workshop *RoboARCH: Robotics Acceleration with Computing Hardware and Systems*, 2025. [Abstract](https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view)
 - **Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology**. *IEEE Electrification Magazine, vol. 11, no. 2*, 2023. [Article](https://ieeexplore.ieee.org/abstract/document/10143767)
 
 # Projects
@@ -33,25 +33,25 @@ These results are part of HiL testing and real-world testing with a research veh
 
 | HiL | Real-world |
 |:-----------------------------------------:|:-----------------------------------------:|
-| <img src="imgs/thamp/shil.gif" height="200"/> | <img src="imgs/thamp/sreal.gif" height="200"/> |
+| <img src="imgs/thamp/animation_sim_straight.gif" height="200"/> | <img src="imgs/thamp/animation_real_straight.gif" height="200"/> |
 
 #### Parking Vehicle
 
 | HiL | Real-world |
 |:-----------------------------------------:|:-----------------------------------------:|
-| <img src="imgs/thamp/phil.gif" height="200"/> | <img src="imgs/thamp/phil.gif" height="200"/> |
+| <img src="imgs/thamp/animation_sim_park.gif" height="200"/> | <img src="imgs/thamp/animation_real_park.gif" height="200"/> |
 
 #### Overtaking
 
 | HiL | Real-world |
 |:-----------------------------------------:|:-----------------------------------------:|
-| <img src="imgs/thamp/sover.gif" height="200"/> | <img src="imgs/thamp/rover.gif" height="200"/> |
+| <img src="imgs/thamp/animation_sim_overtake.gif" height="200"/> | <img src="imgs/thamp/animation_real_overtake.gif" height="200"/> |
 
 #### Avoidance
 
 | HiL | Real-world |
 |:-----------------------------------------:|:-----------------------------------------:|
-| <img src="imgs/thamp/savoid.gif" height="200"/> | <img src="imgs/thamp/ravoid.gif" height="200"/> |
+| <img src="imgs/thamp/animation_sim_avoid.gif" height="200"/> | <img src="imgs/thamp/animation_real_avoid.gif" height="200"/> |
 
 ## Yolov4 Edge Object Detection: Jetson TX2 vs. Utlrascale MPSoC
 
