@@ -1,7 +1,7 @@
 # Samuel Leitenmaier
 Research Associate at [Technical University of Applied Sciences Augsburg](https://www.tha.de/)
-## Contact
-- Email: samuel.leitenmaier@tha.de
+
+**Contact:** samuel.leitenmaier@tha.de
 
 # Biography
 
@@ -17,7 +17,7 @@ scene understanding of autonomous vehicles with a special focus on heterogeneous
 
 # Publications
 
-- **Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner**. *IEEE International Conference on Robotics and Automation,RoboARCH: Robotics Acceleration with Computing Hardware and Systems*, 2025. [Abstract](https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view)
+- **Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner**. *IEEE International Conference on Robotics and Automation, RoboARCH: Robotics Acceleration with Computing Hardware and Systems*, 2025. [Abstract](https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view)
 - **Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology**. *IEEE Electrification Magazine, vol. 11, no. 2*, 2023. [Article](https://ieeexplore.ieee.org/abstract/document/10143767)
 
 # Projects
