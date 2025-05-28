@@ -3,6 +3,8 @@ Research Associate at [Technical University of Applied Sciences Augsburg](https:
 
 **Contact:** samuel.leitenmaier@tha.de
 
+[Curriculum Vitae](subpages/cv/)
+
 # Biography
 
 Samuel Leitenmaier received his B. Eng. in Computer Engineering and M. Sc. in Applied Research on Computer Science from the  [Technical University of Applied Sciences Augsburg](https://www.tha.de/).
