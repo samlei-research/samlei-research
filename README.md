@@ -3,7 +3,7 @@ Research Associate at [Technical University of Applied Sciences Augsburg](https:
 
 **Contact:** samuel.leitenmaier@tha.de
 
-[Curriculum Vitae](subpages/cv/)
+[Curriculum Vitae](subpages/cv.md)
 
 # Biography
 
@@ -104,3 +104,7 @@ Metrics are: FPS, W. On Jetson TX2 `jtop` was used to measure power consumption,
 samlei-research/samlei-research is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+## Formula Student Vehicle Control Unit
+
+[Project Site](https://showcase.informatik.tha.de/wise-2020-21/vehicle-control-unit-formula-student)
