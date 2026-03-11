@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Leitenmaier</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080e09;
+    --surface: #0d140e;
+    --border: #1a2e1c;
+    --green: #4ade80;
+    --green-dim: #2d6e3e;
+    --green-faint: rgba(74, 222, 128, 0.06);
+    --text: #d4e8d6;
+    --muted: #4a6b4e;
+    --mono: 'Space Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 28px 80px;
+  }
+
+  .path {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+  }
+  .path span { color: var(--green); }
+
+  .header {
+    margin-bottom: 52px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--green-dim);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+  }
+
+  .bio {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #7a9e7e;
+    max-width: 520px;
+  }
+
+  .status-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 5px var(--green);
+    animation: blink 2.5s infinite;
+  }
+  .dot.dim { background: var(--green-dim); box-shadow: none; animation: none; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .section { margin-bottom: 48px; }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .phd-note {
+    border-left: 2px solid var(--green-dim);
+    padding: 16px 20px;
+    background: var(--green-faint);
+    border-radius: 0 6px 6px 0;
+  }
+  .phd-note strong {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .phd-note p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #7a9e7e;
+  }
+
+  .interests-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .interests-list li {
+    font-size: 15px;
+    color: #7a9e7e;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    line-height: 1.6;
+  }
+  .interests-list li::before {
+    content: '→';
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green-dim);
+    flex-shrink: 0;
+  }
+
+  .pub {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub:first-child { border-top: 1px solid var(--border); }
+  .pub-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .pub-title {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .pub-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green-dim);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .pub-link:hover { color: var(--green); }
+
+  .project {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .project:first-child { border-top: 1px solid var(--border); }
+  .project-name {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--green);
+  }
+  .project-desc {
+    font-size: 15px;
+    color: #7a9e7e;
+    line-height: 1.6;
+  }
+  .project-tags {
+    margin-top: 6px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .tools-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tool {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 11px;
+    border-radius: 4px;
+    transition: all 0.15s;
+    cursor: default;
+  }
+  .tool:hover { color: var(--green); border-color: var(--green-dim); }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact-list li {
+    font-family: var(--mono);
+    font-size: 13px;
+    display: flex;
+    gap: 16px;
+  }
+  .contact-list .label { color: var(--muted); min-width: 56px; }
+  .contact-list a { color: var(--green-dim); text-decoration: none; transition: color 0.15s; }
+  .contact-list a:hover { color: var(--green); }
+
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--border);
+    line-height: 1.9;
+  }
+  .footer .g { color: var(--muted); }
+
+
+</style>
+</head>
+<body>
+
+
+<div class="container">
+
+  <div class="header">
+    <div class="path">~/research/<span>samlei</span></div>
+    <h1>Samuel Leitenmaier</h1>
+    <div class="role">Research Associate · TH Augsburg · Driverless Mobility Group</div>
+    <p class="bio">
+      I work at the intersection of motion planning and hardware acceleration for autonomous vehicles — with a particular interest in how FPGAs and heterogeneous SoCs can make real-time autonomy both efficient and reliable.
+    </p>
+    <div class="status-row">
+      <div class="status-pill"><div class="dot"></div> active research</div>
+      <div class="status-pill"><div class="dot dim"></div> pursuing PhD</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">looking ahead</div>
+    <div class="phd-note">
+      <strong>// PhD candidate (upcoming)</strong>
+      <p>Working toward a doctorate on hardware-software co-design for autonomous driving — exploring how heterogeneous compute can enable deterministic, low-power perception and planning pipelines.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">research interests</div>
+    <ul class="interests-list">
+      <li>Autonomous driving — motion planning &amp; scene understanding</li>
+      <li>Heterogeneous computing with FPGAs and SoC platforms</li>
+      <li>Hardware/software co-design for real-time robotics</li>
+      <li>Edge inference on resource-constrained embedded systems</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">publications</div>
+    <div class="pub">
+      <div class="pub-meta">2025 · IEEE ICRA · Workshop RoboARCH</div>
+      <div class="pub-title">Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner</div>
+      <a class="pub-link" href="https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view" target="_blank">↗ abstract</a>
+    </div>
+    <div class="pub">
+      <div class="pub-meta">2023 · IEEE Electrification Magazine · Vol 11, No 2</div>
+      <div class="pub-title">Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology</div>
+      <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10143767" target="_blank">↗ ieee xplore</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">projects</div>
+    <div class="project">
+      <div class="project-name">THAMP</div>
+      <div>
+        <div class="project-desc">FPGA-accelerated motion planner for autonomous vehicles, validated in hardware-in-the-loop and real-world testing.</div>
+        <div class="project-tags"><span class="tag">FPGA</span><span class="tag">motion planning</span><span class="tag">AV</span></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-name">YOLOv4 Edge</div>
+      <div>
+        <div class="project-desc">Object detection comparison between Jetson TX2 and UltraScale MPSoC — notable power efficiency advantage on FPGA.</div>
+        <div class="project-tags"><span class="tag">edge AI</span><span class="tag">FPGA</span><span class="tag">benchmarking</span></div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-name">FS Inverter</div>
+      <div>
+        <div class="project-desc">Traction inverter for Formula Student EV — EnDat encoder interface, CAN-AXI bridge, custom embedded Linux stack.</div>
+        <div class="project-tags"><span class="tag">embedded</span><span class="tag">Linux</span><span class="tag">CAN</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">tools &amp; languages</div>
+    <div class="tools-wrap">
+      <span class="tool">VHDL</span>
+      <span class="tool">HLS</span>
+      <span class="tool">C/C++</span>
+      <span class="tool">Python</span>
+      <span class="tool">Xilinx Vivado</span>
+      <span class="tool">ROS 2</span>
+      <span class="tool">Embedded Linux</span>
+      <span class="tool">Zynq UltraScale</span>
+      <span class="tool">CAN Bus</span>
+      <span class="tool">U-Boot</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">contact</div>
+    <ul class="contact-list">
+      <li><span class="label">email</span><a href="/cdn-cgi/l/email-protection#85f6e4e8f0e0e9abe9e0ecf1e0ebe8e4ece0f7c5f1ede4abe1e0"><span class="__cf_email__" data-cfemail="c1b2a0acb4a4adefada4a8b5a4afaca0a8a4b381b5a9a0efa5a4">[email&#160;protected]</span></a></li>
+      <li><span class="label">web</span><a href="https://samlei.io">samlei.io</a></li>
+      <li><span class="label">cv</span><a href="subpages/cv.html">samlei.io/cv</a></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span cl
