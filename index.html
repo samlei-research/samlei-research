@@ -48,6 +48,20 @@
     margin-bottom: 52px;
     padding-bottom: 36px;
     border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    filter: grayscale(20%);
+    flex-shrink: 0;
   }
 
   h1 {
@@ -275,16 +289,19 @@
 <div class="container">
 
   <div class="header">
-    <div class="path">~/research/<span>samlei</span></div>
-    <h1>Samuel Leitenmaier</h1>
-    <div class="role">Research Associate · TH Augsburg · Driverless Mobility Group</div>
-    <p class="bio">
-      I work at the intersection of motion planning and hardware acceleration for autonomous vehicles — with a particular interest in how FPGAs and heterogeneous SoCs can make real-time autonomy both efficient and reliable.
-    </p>
-    <div class="status-row">
-      <div class="status-pill"><div class="dot"></div> active research</div>
-      <div class="status-pill"><div class="dot dim"></div> pursuing PhD</div>
+    <div>
+      <div class="path">~/research/<span>samlei</span></div>
+      <h1>Samuel Leitenmaier</h1>
+      <div class="role">Research Associate · TH Augsburg · Driverless Mobility Group</div>
+      <p class="bio">
+        I work at the intersection of motion planning and hardware acceleration for autonomous vehicles — with a particular interest in how FPGAs and heterogeneous SoCs can make real-time autonomy both efficient and reliable.
+      </p>
+      <div class="status-row">
+        <div class="status-pill"><div class="dot"></div> active research</div>
+        <div class="status-pill"><div class="dot dim"></div> pursuing PhD</div>
+      </div>
     </div>
+    <img class="profile-pic" src="imgs/pic.jpg" alt="Samuel Leitenmaier" />
   </div>
 
   <div class="section">
