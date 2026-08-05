@@ -1,4 +1,5 @@
 # Samuel Leitenmaier
+PhD Student at [Technical University of Nuremberg](https://www.utn.de/)
 Research Associate at [Technical University of Applied Sciences Augsburg](https://www.tha.de/)
 
 **Contact:** samuel.leitenmaier@tha.de
@@ -10,7 +11,7 @@ He is currently a research associate at the [Driverless Mobility](https://github
 scene understanding of autonomous vehicles with a special focus on heterogeneous computing architectures utilizing these.
 
 # Research interests
-- Autonomous Driving
+- Autonomous Driving Generalization
 - Motion Planning, Navigation, Scene Understanding
 - Heterogeneous Computing with FPGAs
 - Efficient Hardware / Software using SoC
