@@ -1,5 +1,6 @@
 # Samuel Leitenmaier
 PhD Student at [Technical University of Nuremberg](https://www.utn.de/)
+
 Research Associate at [Technical University of Applied Sciences Augsburg](https://www.tha.de/)
 
 **Contact:** samuel.leitenmaier@tha.de
