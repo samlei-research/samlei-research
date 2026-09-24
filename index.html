@@ -202,6 +202,35 @@
     color: var(--forest-muted);
   }
 
+  /* ---- News ---------------------------------------------------------- */
+
+  .news-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .news-item {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .news-date {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 4px 8px;
+    background: var(--forest-light);
+    border: var(--stroke-thin) solid var(--ink);
+    border-radius: var(--radius-card);
+    box-shadow: 4px 4px 0 var(--forest);
+    transform: rotate(-3deg);
+  }
+  .news-item:nth-child(even) .news-date { transform: rotate(2deg); }
+  .news-item p { line-height: 1.6; padding-top: 4px; }
+
   /* ---- Layout -------------------------------------------------------- */
 
   .header {
@@ -292,6 +321,34 @@
       <li class="comic-entry"><span class="title">Heterogeneous computing with FPGAs and SoC platforms</span></li>
       <li class="comic-entry"><span class="title">Hardware/software co-design for real-time robotics</span></li>
       <li class="comic-entry"><span class="title">Edge inference on resource-constrained embedded systems</span></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="comic-h2">News</h2>
+    <!-- Newest first. Template:
+    <li class="news-item">
+      <span class="news-date">Mon YYYY</span>
+      <p>What happened, with an <a href="...">optional link</a>.</p>
+    </li>
+    -->
+    <ul class="news-list">
+      <li class="news-item">
+        <span class="news-date">Sep 2026</span>
+        <p>Received the <strong>Best Poster Award</strong> at the ELLIS Summer School on Autonomous Driving.</p>
+      </li>
+      <li class="news-item">
+        <span class="news-date">2026</span>
+        <p>Successfully completed the <strong>NeMo.bil</strong> project.</p>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Apr 2026</span>
+        <p>Joined <strong>UTN</strong> (University of Technology Nuremberg) as a PhD student.</p>
+      </li>
+      <li class="news-item">
+        <span class="news-date">2025</span>
+        <p>Paper on the <strong>THAccelerated Motion Planner</strong> at the RoboARCH workshop, IEEE ICRA 2025. <a href="https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view" target="_blank" rel="noopener">↗ abstract</a></p>
+      </li>
     </ul>
   </section>
 
