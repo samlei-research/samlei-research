@@ -4,395 +4,369 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samuel Leitenmaier</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+  /* Forest-green comic style — tokens from the "Intro & Research" deck,
+     with type sizes scaled down from slide dimensions to web dimensions. */
   :root {
-    --bg: #080e09;
-    --surface: #0d140e;
-    --border: #1a2e1c;
-    --green: #4ade80;
-    --green-dim: #2d6e3e;
-    --green-faint: rgba(74, 222, 128, 0.06);
-    --text: #d4e8d6;
-    --muted: #4a6b4e;
-    --mono: 'Space Mono', monospace;
-    --sans: 'IBM Plex Sans', sans-serif;
+    --ink: #14110f;
+    --paper: #f5ecd7;
+    --card: #fffaf0;
+    --forest: #1f6a45;
+    --forest-dark: #123b28;
+    --forest-light: #bfe6cc;
+    --forest-muted: #4f7d68;
+
+    --font-display: 'Bangers', 'Brush Script MT', serif;
+    --font-body: 'DM Sans', Arial, sans-serif;
+
+    --fs-hero: clamp(52px, 11vw, 96px);
+    --fs-h2: clamp(36px, 6vw, 52px);
+    --fs-quote: clamp(20px, 3vw, 24px);
+    --fs-body-lg: 17px;
+    --fs-body: 16px;
+    --fs-eyebrow: 13px;
+
+    --stroke-thick: 5px;
+    --stroke-thin: 3px;
+    --shadow-offset-lg: 10px;
+    --shadow-offset-sm: 6px;
+    --radius-card: 10px;
+    --radius-pill: 256px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 400;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
     min-height: 100vh;
   }
 
+  a { color: var(--forest); font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { color: var(--forest-dark); }
+
   .container {
-    max-width: 720px;
+    max-width: 820px;
     margin: 0 auto;
-    padding: 64px 28px 80px;
+    padding: 56px 24px 80px;
   }
 
-  .path {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 28px;
+  /* ---- Typography ---------------------------------------------------- */
+
+  .comic-hero {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--fs-hero);
+    line-height: 1.05;
+    letter-spacing: 2px;
+    color: var(--forest-dark);
+    -webkit-text-stroke: 2px var(--ink);
   }
-  .path span { color: var(--green); }
+
+  .comic-h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--fs-h2);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: var(--forest-dark);
+    margin-bottom: 20px;
+  }
+
+  .comic-eyebrow {
+    font-size: var(--fs-eyebrow);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--forest);
+  }
+
+  .comic-quote {
+    font-size: var(--fs-quote);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--forest-dark);
+  }
+  .comic-quote em { font-style: normal; color: var(--forest); }
+
+  .comic-meta {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--forest-muted);
+  }
+
+  /* ---- Sticker card -------------------------------------------------- */
+
+  .comic-sticker {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: var(--card);
+    border: var(--stroke-thick) solid var(--ink);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-offset-lg) var(--shadow-offset-lg) 0 var(--forest);
+    transform: rotate(4deg);
+  }
+  .comic-sticker img { border-radius: 4px; display: block; }
+  .comic-sticker .caption {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--ink);
+  }
+
+  /* ---- Pills --------------------------------------------------------- */
+
+  .comic-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: var(--fs-body-lg);
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--forest-light);
+    border: var(--stroke-thin) solid var(--ink);
+    border-radius: var(--radius-pill);
+  }
+  .comic-pill--sm {
+    padding: 3px 12px;
+    font-size: 13px;
+    border-width: 2px;
+  }
+  .comic-pill--plain { background: var(--card); }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ---- Cards --------------------------------------------------------- */
+
+  .comic-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background: var(--card);
+    border: var(--stroke-thin) solid var(--ink);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--forest);
+  }
+  .comic-card h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    color: var(--forest-dark);
+  }
+  .comic-card p { line-height: 1.6; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+  }
+
+  /* ---- CV / list entries --------------------------------------------- */
+
+  .entry-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .comic-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 14px;
+    border-left: 4px solid var(--forest);
+  }
+  .comic-entry .title {
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .comic-entry .meta {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--forest-muted);
+  }
+
+  /* ---- Layout -------------------------------------------------------- */
 
   .header {
-    margin-bottom: 52px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--border);
+    position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 32px;
-    align-items: start;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 72px;
+  }
+  .header-text { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+  .bio { font-size: 17px; line-height: 1.7; max-width: 520px; }
+
+  .halftone {
+    position: absolute;
+    top: -28px;
+    right: -12px;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
-    border: 1px solid var(--border);
-    filter: grayscale(20%);
-    flex-shrink: 0;
+    filter: contrast(1.08) grayscale(1);
   }
 
-  h1 {
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: 40px;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 10px;
-  }
-
-  .role {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--green-dim);
-    letter-spacing: 0.04em;
-    margin-bottom: 20px;
-  }
-
-  .bio {
-    font-size: 16px;
-    line-height: 1.75;
-    color: #7a9e7e;
-    max-width: 520px;
-  }
-
-  .status-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-  }
-  .status-pill {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 5px var(--green);
-    animation: blink 2.5s infinite;
-  }
-  .dot.dim { background: var(--green-dim); box-shadow: none; animation: none; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
-  .section { margin-bottom: 48px; }
-
-  .section-title {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  .phd-note {
-    border-left: 2px solid var(--green-dim);
-    padding: 16px 20px;
-    background: var(--green-faint);
-    border-radius: 0 6px 6px 0;
-  }
-  .phd-note strong {
-    display: block;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--green);
-    font-weight: 400;
-    margin-bottom: 8px;
-    letter-spacing: 0.05em;
-  }
-  .phd-note p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #7a9e7e;
-  }
-
-  .interests-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .interests-list li {
-    font-size: 15px;
-    color: #7a9e7e;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    line-height: 1.6;
-  }
-  .interests-list li::before {
-    content: '→';
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--green-dim);
-    flex-shrink: 0;
-  }
-
-  .pub {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .pub:first-child { border-top: 1px solid var(--border); }
-  .pub-meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-  }
-  .pub-title {
-    font-size: 15px;
-    color: var(--text);
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-  .pub-link {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--green-dim);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .pub-link:hover { color: var(--green); }
-
-  .project {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 16px;
-    align-items: baseline;
-  }
-  .project:first-child { border-top: 1px solid var(--border); }
-  .project-name {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--green);
-  }
-  .project-desc {
-    font-size: 15px;
-    color: #7a9e7e;
-    line-height: 1.6;
-  }
-  .project-tags {
-    margin-top: 6px;
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    font-family: var(--mono);
-    font-size: 9px;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .tools-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .tool {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 5px 11px;
-    border-radius: 4px;
-    transition: all 0.15s;
-    cursor: default;
-  }
-  .tool:hover { color: var(--green); border-color: var(--green-dim); }
-
-  .contact-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .contact-list li {
-    font-family: var(--mono);
-    font-size: 13px;
-    display: flex;
-    gap: 16px;
-  }
-  .contact-list .label { color: var(--muted); min-width: 56px; }
-  .contact-list a { color: var(--green-dim); text-decoration: none; transition: color 0.15s; }
-  .contact-list a:hover { color: var(--green); }
+  .section { margin-bottom: 64px; }
 
   .footer {
-    margin-top: 60px;
     padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--border);
-    line-height: 1.9;
+    border-top: var(--stroke-thin) solid var(--ink);
   }
-  .footer .g { color: var(--muted); }
 
-
+  @media (max-width: 640px) {
+    .header { grid-template-columns: 1fr; gap: 32px; }
+    .halftone { display: none; }
+    .header .comic-sticker { justify-self: start; transform: rotate(-3deg); }
+    .card-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-
 <div class="container">
 
-  <div class="header">
-    <div>
-      <div class="path">~/research/<span>samlei</span></div>
-      <h1>Samuel Leitenmaier</h1>
-      <div class="role">Research Associate · TH Augsburg</div>
+  <header class="header">
+    <svg class="halftone" viewBox="0 0 200 160" width="200" height="160" aria-hidden="true">
+      <g fill="#1f6a45" fill-opacity="0.35">
+        <circle cx="16" cy="16" r="7"/><circle cx="48" cy="16" r="7"/><circle cx="80" cy="16" r="7"/><circle cx="112" cy="16" r="7"/><circle cx="144" cy="16" r="7"/><circle cx="176" cy="16" r="7"/>
+        <circle cx="16" cy="48" r="7"/><circle cx="48" cy="48" r="7"/><circle cx="80" cy="48" r="7"/><circle cx="112" cy="48" r="7"/><circle cx="144" cy="48" r="7"/><circle cx="176" cy="48" r="7"/>
+        <circle cx="16" cy="80" r="7"/><circle cx="48" cy="80" r="7"/><circle cx="80" cy="80" r="7"/><circle cx="112" cy="80" r="7"/><circle cx="144" cy="80" r="7"/><circle cx="176" cy="80" r="7"/>
+        <circle cx="16" cy="112" r="7"/><circle cx="48" cy="112" r="7"/><circle cx="80" cy="112" r="7"/><circle cx="112" cy="112" r="7"/><circle cx="144" cy="112" r="7"/><circle cx="176" cy="112" r="7"/>
+        <circle cx="16" cy="144" r="7"/><circle cx="48" cy="144" r="7"/><circle cx="80" cy="144" r="7"/><circle cx="112" cy="144" r="7"/><circle cx="144" cy="144" r="7"/><circle cx="176" cy="144" r="7"/>
+      </g>
+    </svg>
+    <div class="header-text">
+      <div class="comic-eyebrow">~/research/samlei</div>
+      <h1 class="comic-hero">Samuel Leitenmaier</h1>
+      <div><span class="comic-pill">Research Associate · TH Augsburg</span></div>
       <p class="bio">
-        I work at the intersection of machine learning based planning and hardware acceleration for autonomous vehicles — with a particular interest in heterogeneous SoCs can make real-time autonomy both efficient and reliable.
+        I work at the intersection of machine learning based planning and hardware acceleration for autonomous vehicles — with a particular interest in how heterogeneous SoCs can make real-time autonomy both efficient and reliable.
       </p>
-      <div class="status-row">
-        <div class="status-pill"><div class="dot"></div> active research</div>
-        <div class="status-pill"><div class="dot dim"></div> pursuing PhD</div>
+      <div class="pill-row">
+        <span class="comic-pill comic-pill--sm">active research</span>
+        <span class="comic-pill comic-pill--sm comic-pill--plain">pursuing PhD</span>
       </div>
     </div>
-    <img class="profile-pic" src="imgs/pic.jpg" alt="Samuel Leitenmaier" />
-  </div>
+    <figure class="comic-sticker">
+      <img class="profile-pic" src="imgs/pic.jpg" alt="Samuel Leitenmaier" />
+    </figure>
+  </header>
 
-  <div class="section">
-    <div class="section-title">looking ahead</div>
-    <div class="phd-note">
-      <strong>// PhD candidate (currently)</strong>
-      <p>Working toward a doctorate on planning-oriented autonomous driving beyond observed futures.</p>
+  <section class="section">
+    <h2 class="comic-h2">Looking ahead</h2>
+    <div class="comic-card">
+      <div class="comic-eyebrow">PhD candidate (currently)</div>
+      <p class="comic-quote">Working toward a doctorate on <em>planning-oriented autonomous driving</em> beyond observed futures.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="section">
-    <div class="section-title">research interests</div>
-    <ul class="interests-list">
-      <li>Autonomous driving — motion planning &amp; scene understanding</li>
-      <li>World models</li>
-      <li>Heterogeneous computing with FPGAs and SoC platforms</li>
-      <li>Hardware/software co-design for real-time robotics</li>
-      <li>Edge inference on resource-constrained embedded systems</li>
+  <section class="section">
+    <h2 class="comic-h2">Research interests</h2>
+    <ul class="entry-list">
+      <li class="comic-entry"><span class="title">Autonomous driving — motion planning &amp; scene understanding</span></li>
+      <li class="comic-entry"><span class="title">World models</span></li>
+      <li class="comic-entry"><span class="title">Heterogeneous computing with FPGAs and SoC platforms</span></li>
+      <li class="comic-entry"><span class="title">Hardware/software co-design for real-time robotics</span></li>
+      <li class="comic-entry"><span class="title">Edge inference on resource-constrained embedded systems</span></li>
     </ul>
-  </div>
+  </section>
 
-  <div class="section">
-    <div class="section-title">publications</div>
-    <div class="pub">
-      <div class="pub-meta">2025 · IEEE ICRA · Workshop RoboARCH</div>
-      <div class="pub-title">Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner</div>
-      <a class="pub-link" href="https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view" target="_blank">↗ abstract</a>
-    </div>
-    <div class="pub">
-      <div class="pub-meta">2023 · IEEE Electrification Magazine · Vol 11, No 2</div>
-      <div class="pub-title">Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology</div>
-      <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10143767" target="_blank">↗ ieee xplore</a>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">projects</div>
-    <div class="project">
-      <div class="project-name">NeMo.bil</div>
-      <div>
-        <div class="project-desc">Reponsible for technical coordination and system development of the autonomous driving system. Second university to get L4 testing approval on public streets.</div>
-        <div class="project-tags"><span class="tag">Research project</span><span class="tag">L4/span><span class="tag">AV</span></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-name">THAMP</div>
-      <div>
-        <div class="project-desc">FPGA-accelerated motion planner for autonomous vehicles, validated in hardware-in-the-loop and real-world testing.</div>
-        <div class="project-tags"><span class="tag">FPGA</span><span class="tag">motion planning</span><span class="tag">AV</span></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-name">YOLOv4 Edge</div>
-      <div>
-        <div class="project-desc">Object detection comparison between Jetson TX2 and UltraScale MPSoC — notable power efficiency advantage on FPGA.</div>
-        <div class="project-tags"><span class="tag">edge AI</span><span class="tag">FPGA</span><span class="tag">benchmarking</span></div>
-      </div>
-    </div>
-    <div class="project">
-      <div class="project-name">FS Inverter</div>
-      <div>
-        <div class="project-desc">Traction inverter for Formula Student EV — EnDat encoder interface, CAN-AXI bridge, custom embedded Linux stack.</div>
-        <div class="project-tags"><span class="tag">embedded</span><span class="tag">Linux</span><span class="tag">CAN</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">tools &amp; languages</div>
-    <div class="tools-wrap">
-      <span class="tool">VHDL</span>
-      <span class="tool">HLS</span>
-      <span class="tool">C/C++</span>
-      <span class="tool">Python</span>
-      <span class="tool">Xilinx Vivado</span>
-      <span class="tool">ROS 2</span>
-      <span class="tool">Embedded Linux</span>
-      <span class="tool">Zynq UltraScale</span>
-      <span class="tool">CAN Bus</span>
-      <span class="tool">U-Boot</span>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-title">contact</div>
-    <ul class="contact-list">
-      <li><span class="label">email</span><a href="/cdn-cgi/l/email-protection#85f6e4e8f0e0e9abe9e0ecf1e0ebe8e4ece0f7c5f1ede4abe1e0"><span class="__cf_email__" data-cfemail="c1b2a0acb4a4adefada4a8b5a4afaca0a8a4b381b5a9a0efa5a4">[email&#160;protected]</span></a></li>
-      <li><span class="label">web</span><a href="https://samlei.io">samlei.io</a></li>
-      <li><span class="label">cv</span><a href="subpages/cv.html">samlei.io/cv</a></li>
+  <section class="section">
+    <h2 class="comic-h2">Publications</h2>
+    <ul class="entry-list">
+      <li class="comic-entry">
+        <span class="meta">2025 · IEEE ICRA · Workshop RoboARCH</span>
+        <span class="title">Towards Specialized Hardware for Autonomous Driving Functions: THAccelerated Motion Planner</span>
+        <a href="https://drive.google.com/file/d/1I2Ff6ddKC1gLyRi1xga5TXx0z62XjFFI/view" target="_blank" rel="noopener">↗ abstract</a>
+      </li>
+      <li class="comic-entry">
+        <span class="meta">2023 · IEEE Electrification Magazine · Vol 11, No 2</span>
+        <span class="title">Autonomous Electric Race Car Inverter Development: Revving up the future with resource efficient drive technology</span>
+        <a href="https://ieeexplore.ieee.org/abstract/document/10143767" target="_blank" rel="noopener">↗ ieee xplore</a>
+      </li>
     </ul>
-  </div>
+  </section>
 
-  <div class="footer">
-    <span cl
+  <section class="section">
+    <h2 class="comic-h2">Projects</h2>
+    <div class="card-grid">
+      <article class="comic-card">
+        <h3>NeMo.bil</h3>
+        <p>Responsible for technical coordination and system development of the autonomous driving system. Second university to get L4 testing approval on public streets.</p>
+        <div class="pill-row"><span class="comic-pill comic-pill--sm">Research project</span><span class="comic-pill comic-pill--sm">L4</span><span class="comic-pill comic-pill--sm">AV</span></div>
+      </article>
+      <article class="comic-card">
+        <h3>THAMP</h3>
+        <p>FPGA-accelerated motion planner for autonomous vehicles, validated in hardware-in-the-loop and real-world testing.</p>
+        <div class="pill-row"><span class="comic-pill comic-pill--sm">FPGA</span><span class="comic-pill comic-pill--sm">motion planning</span><span class="comic-pill comic-pill--sm">AV</span></div>
+      </article>
+      <article class="comic-card">
+        <h3>YOLOv4 Edge</h3>
+        <p>Object detection comparison between Jetson TX2 and UltraScale MPSoC — notable power efficiency advantage on FPGA.</p>
+        <div class="pill-row"><span class="comic-pill comic-pill--sm">edge AI</span><span class="comic-pill comic-pill--sm">FPGA</span><span class="comic-pill comic-pill--sm">benchmarking</span></div>
+      </article>
+      <article class="comic-card">
+        <h3>FS Inverter</h3>
+        <p>Traction inverter for Formula Student EV — EnDat encoder interface, CAN-AXI bridge, custom embedded Linux stack.</p>
+        <div class="pill-row"><span class="comic-pill comic-pill--sm">embedded</span><span class="comic-pill comic-pill--sm">Linux</span><span class="comic-pill comic-pill--sm">CAN</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="comic-h2">Tools &amp; languages</h2>
+    <div class="pill-row">
+      <span class="comic-pill comic-pill--sm comic-pill--plain">VHDL</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">HLS</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">C/C++</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">Python</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">Xilinx Vivado</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">ROS 2</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">Embedded Linux</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">Zynq UltraScale</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">CAN Bus</span>
+      <span class="comic-pill comic-pill--sm comic-pill--plain">U-Boot</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="comic-h2">Contact</h2>
+    <ul class="entry-list">
+      <li class="comic-entry"><span class="meta">email</span><a href="mailto:samuel.leitenmaier@tha.de">samuel.leitenmaier@tha.de</a></li>
+      <li class="comic-entry"><span class="meta">web</span><a href="https://samlei.io">samlei.io</a></li>
+      <li class="comic-entry"><span class="meta">cv</span><a href="subpages/cv.html">samlei.io/cv</a></li>
+    </ul>
+  </section>
+
+  <footer class="footer comic-meta">
+    © 2026 Samuel Leitenmaier · TH Augsburg
+  </footer>
+
+</div>
+
+</body>
+</html>
